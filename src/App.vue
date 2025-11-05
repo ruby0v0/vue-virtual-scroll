@@ -15,10 +15,10 @@ const list = Array.from({ length: 10000 }, (_, i) => ({
 </script>
 
 <template>
-  <div>
+  <div class="w-400px">
     <VirtualScroll style="min-height: 240px" :list="list">
       <template #default="{ data }">
-        <div class="flex items-center justify-center" :style="{ height: '50px' }">
+        <div class="flex items-center justify-center">
           {{ data.message }}
         </div>
       </template>
@@ -26,6 +26,4 @@ const list = Array.from({ length: 10000 }, (_, i) => ({
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
