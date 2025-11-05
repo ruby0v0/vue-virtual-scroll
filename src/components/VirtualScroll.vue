@@ -85,8 +85,8 @@ function binarySearch(list: Position[], value: number) {
       if (tempIndex === null || tempIndex > midIndex) {
         tempIndex = midIndex
       }
+      end = midIndex - 1
     }
-    end = midIndex - 1
   }
   return tempIndex as number
 }
@@ -157,12 +157,7 @@ onUpdated(() => {
   <div ref="containerRef" class="infinite-container" @scroll="handleScroll">
     <div class="infinite-phantom" :style="phantomStyle" />
     <div ref="listRef" class="infinite-list" :style="listStyle">
-      <div
-        v-for="(data, index) in visibleList"
-        ref="itemRef"
-        :key="data.key"
-        class="infinite-list-item"
-      >
+      <div v-for="(data, index) in visibleList" ref="itemRef" :key="data.key" class="infinite-list-item">
         <slot :data="data" :index="index" />
       </div>
     </div>
